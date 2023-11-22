@@ -1,23 +1,19 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import Logo from '../assets/logo.png';
 
 export const Header = () => {
+  const activeMenuClasses =
+    'block py-2 px-3 text-primary-800 hover:text-primary-1000 rounded md:bg-transparent md:p-0';
+  const inactiveMenuClassess =
+    'block py-2 px-3 text-slate-50 hover:text-primary-800 rounded md:bg-transparent md:p-0';
   return (
     <header>
-      <nav className="bg-white border-gray-200 dark:bg-gray-900">
+      <nav className="bg-slate-900 border-gray-200">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a
-            href="https://flowbite.com/"
-            className="flex items-center space-x-3 rtl:space-x-reverse"
-          >
-            <img
-              src="https://flowbite.com/docs/images/logo.svg"
-              className="h-8"
-              alt="Flowbite Logo"
-            />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              Flowbite
-            </span>
-          </a>
+          <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src={Logo} className="h-14" alt="FilmFiesta Logo" />
+          </Link>
           <div className="flex md:order-2">
             <button
               type="button"
@@ -123,31 +119,46 @@ export const Header = () => {
                 placeholder="Search..."
               />
             </div>
-            <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
               <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                  aria-current="page"
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? activeMenuClasses : inactiveMenuClassess
+                  }
                 >
                   Home
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                <NavLink
+                  to="/popular"
+                  className={({ isActive }) =>
+                    isActive ? activeMenuClasses : inactiveMenuClassess
+                  }
                 >
-                  About
-                </a>
+                  Popular
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                <NavLink
+                  to="/top-rated"
+                  className={({ isActive }) =>
+                    isActive ? activeMenuClasses : inactiveMenuClassess
+                  }
                 >
-                  Services
-                </a>
+                  Top Rated
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/upcoming"
+                  className={({ isActive }) =>
+                    isActive ? activeMenuClasses : inactiveMenuClassess
+                  }
+                >
+                  Upcoming
+                </NavLink>
               </li>
             </ul>
           </div>
