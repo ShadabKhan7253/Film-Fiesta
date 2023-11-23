@@ -34,7 +34,7 @@ export const SearchPage = () => {
       </h1>
       <div className="flex justify-start flex-wrap">
         {isLoading && renderSkeleton(6)}
-        {data && data.results.map((movie) => <MovieCard movie={movie} />)}
+        {data && data.results.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
       </div>
     </main>
   );

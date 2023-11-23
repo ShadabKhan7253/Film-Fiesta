@@ -21,7 +21,7 @@ export const Header = () => {
     evt.preventDefault();
     const searchValue = evt.target.search.value;
     evt.target.search.value = '';
-    navigate(`/movie/search?q=${searchValue}`);
+    navigate(`/movies/search?q=${searchValue}`);
   };
 
   const activeMenuClasses =
