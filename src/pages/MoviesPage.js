@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { MovieCard } from '../components/MovieCard';
 import { useFetch } from '../hooks';
 import { Link } from 'react-router-dom';
+import { Skeleton } from '../components';
 
 export const MoviesPage = ({ apiPath }) => {
   // const URL = `https://api.themoviedb.org/3/movie${apiPath}?api_key=94220ccbdc06539966a08cc0383e233f`;
@@ -13,9 +14,18 @@ export const MoviesPage = ({ apiPath }) => {
     setUrl(URL);
   }, [apiPath]);
 
+  const renderSkeleton = (nums = 6) => {
+    let skeleton = [];
+    for (let i = 0; i < nums; i++) {
+      skeleton.push(<Skeleton />);
+    }
+    return skeleton;
+  };
+
   return (
     <main>
       <div className="flex justify-start flex-wrap ">
+        {isLoading && renderSkeleton()}
         {data &&
           data.results &&
           data.results.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
