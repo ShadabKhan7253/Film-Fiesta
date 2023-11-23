@@ -17,7 +17,7 @@ export const MoviesPage = ({ apiPath }) => {
   const renderSkeleton = (nums = 6) => {
     let skeleton = [];
     for (let i = 0; i < nums; i++) {
-      skeleton.push(<Skeleton />);
+      skeleton.push(<Skeleton key={i} />);
     }
     return skeleton;
   };

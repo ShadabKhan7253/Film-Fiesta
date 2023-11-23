@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Logo from '../assets/logo.png';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 export const Header = () => {
   const [show, setShow] = useState(false);
   const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem('darkMode')) || false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     localStorage.setItem('darkMode', JSON.stringify(darkMode));
@@ -14,6 +16,13 @@ export const Header = () => {
       document.documentElement.classList.remove('dark');
     }
   }, [darkMode]);
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    const searchValue = evt.target.search.value;
+    evt.target.search.value = '';
+    navigate(`/movie/search?q=${searchValue}`);
+  };
 
   const activeMenuClasses =
     'block py-2 px-3 text-primary-800 hover:text-primary-1000 rounded md:bg-transparent md:p-0';
@@ -120,12 +129,15 @@ export const Header = () => {
                 </svg>
                 <span className="sr-only">Search icon</span>
               </div>
-              <input
-                type="text"
-                id="search-navbar"
-                className="block w-full p-2 ps-10 text-sm text-gray-900 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white rounded-lg"
-                placeholder="Search..."
-              />
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="search"
+                  id="search-navbar"
+                  className="block w-full p-2 ps-10 text-sm text-gray-900 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white rounded-lg"
+                  placeholder="Search..."
+                />
+              </form>
             </div>
             <button
               data-collapse-toggle="navbar-search"
@@ -177,12 +189,15 @@ export const Header = () => {
                   />
                 </svg>
               </div>
-              <input
-                type="text"
-                id="search-navbar"
-                className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-                placeholder="Search..."
-              />
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="search"
+                  id="search-navbar"
+                  className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                  placeholder="Search..."
+                />
+              </form>
             </div>
             <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
               <li>
