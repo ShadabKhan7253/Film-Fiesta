@@ -6,7 +6,7 @@ import { SkeletonDetail } from '../components/SkeletonDetail';
 
 export const MovieDetailsPage = () => {
   const params = useParams();
-  const { data, isLoading, error, setUrl } = useFetch();
+  const { data, isLoading, setUrl } = useFetch();
 
   useEffect(() => {
     const movieId = params.id;
@@ -15,6 +15,7 @@ export const MovieDetailsPage = () => {
 
     const URL = `${BASE_URL}/3/movie/${movieId}?api_key=${API_KEY}`;
     setUrl(URL);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <main>

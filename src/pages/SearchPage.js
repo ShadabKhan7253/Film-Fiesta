@@ -9,9 +9,8 @@ export const SearchPage = () => {
   const queryString = params.get('q');
   const API_KEY = process.env.REACT_APP_API_KEY;
   const BASE_URL = process.env.REACT_APP_BASE_URL;
-  const URL = `${BASE_URL}/3/search/movie?api_key=${API_KEY}&query=${queryString}`;
 
-  const { data, isLoading, error, setUrl } = useFetch();
+  const { data, isLoading, setUrl } = useFetch();
   useDynamicTitle(`Results for: ${queryString} | Film Fiesta`, 'Film Fiesta');
   const renderSkeleton = (nums = 3) => {
     let skeleton = [];
@@ -24,6 +23,7 @@ export const SearchPage = () => {
   useEffect(() => {
     const URL = `${BASE_URL}/3/search/movie?api_key=${API_KEY}&query=${queryString}`;
     setUrl(URL);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [queryString]);
   return (
     <main>

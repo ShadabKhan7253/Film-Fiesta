@@ -5,7 +5,7 @@ import { Skeleton } from '../components';
 
 export const MoviesPage = ({ apiPath, pageTitle }) => {
   // const URL = `https://api.themoviedb.org/3/movie${apiPath}?api_key=94220ccbdc06539966a08cc0383e233f`;
-  const { data, isLoading, error, setUrl } = useFetch();
+  const { data, isLoading, setUrl } = useFetch();
   const API_KEY = process.env.REACT_APP_API_KEY;
   const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -14,6 +14,7 @@ export const MoviesPage = ({ apiPath, pageTitle }) => {
   useEffect(() => {
     const URL = `${BASE_URL}/3/movie${apiPath}?api_key=${API_KEY}`;
     setUrl(URL);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [apiPath]);
 
   const renderSkeleton = (nums = 6) => {

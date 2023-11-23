@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDynamicTitle } from '../hooks';
 
 export const MovieCard = ({ movie }) => {
   const { id, original_title, overview, poster_path } = movie;
