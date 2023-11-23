@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export const useFetch = (initialUrl) => {
-  const [url, setUrl] = useState(initialUrl);
+  const [url, setUrl] = useState(initialUrl || null);
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -11,6 +11,7 @@ export const useFetch = (initialUrl) => {
     const abortController = new AbortController();
 
     const fetchData = async () => {
+      if (!url) return;
       console.log('Fetching data');
       setIsLoading(true);
       try {

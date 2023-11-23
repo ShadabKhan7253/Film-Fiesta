@@ -6,11 +6,11 @@ export const AppRoutes = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<MoviesPage />} />
+        <Route path="/" element={<MoviesPage apiPath="/now_playing" />} />
         <Route path="/movies/:id" element={<MovieDetails />} />
-        <Route path="/top-rated" element={<MoviesPage />} />
-        <Route path="/popular" element={<MoviesPage />} />
-        <Route path="/upcoming" element={<MoviesPage />} />
+        <Route path="/top-rated" element={<MoviesPage apiPath="/top_rated" />} />
+        <Route path="/popular" element={<MoviesPage apiPath="/popular" />} />
+        <Route path="/upcoming" element={<MoviesPage apiPath="/upcoming" />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
