@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDynamicTitle } from '../hooks';
 
 export const MovieCard = ({ movie }) => {
   const { id, original_title, overview, poster_path } = movie;
-  const image_path = `https://image.tmdb.org/t/p/w500/${poster_path}`;
+  const image_path = poster_path
+    ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+    : `https://placehold.co/382x573?text=No\nImage`;
   return (
     <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-2.5">
       <Link to={`/movies/${id}`}>

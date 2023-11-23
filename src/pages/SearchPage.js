@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useFetch } from '../hooks';
+import { useDynamicTitle, useFetch } from '../hooks';
 import { Skeleton } from '../components/Skeleton';
 import { MovieCard } from '../components/MovieCard';
 
@@ -12,7 +12,7 @@ export const SearchPage = () => {
   const URL = `${BASE_URL}/3/search/movie?api_key=${API_KEY}&query=${queryString}`;
 
   const { data, isLoading, error, setUrl } = useFetch();
-
+  useDynamicTitle(`Results for: ${queryString} | Film Fiesta`, 'Film Fiesta');
   const renderSkeleton = (nums = 3) => {
     let skeleton = [];
     for (let i = 0; i < nums; i++) {

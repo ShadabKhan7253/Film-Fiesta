@@ -7,12 +7,10 @@ export const useFetch = (initialUrl) => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    console.log('useEffect of useFetch Called!');
     const abortController = new AbortController();
 
     const fetchData = async () => {
       if (!url) return;
-      console.log('Fetching data');
       setIsLoading(true);
       try {
         const response = await fetch(url, { signal: abortController.signal });

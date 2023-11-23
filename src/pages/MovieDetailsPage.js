@@ -8,7 +8,6 @@ export const MovieDetailsPage = () => {
   const params = useParams();
   const { data, isLoading, error, setUrl } = useFetch();
 
-  console.log(data);
   useEffect(() => {
     const movieId = params.id;
     const BASE_URL = process.env.REACT_APP_BASE_URL;

@@ -1,7 +1,9 @@
 import React from 'react';
 import NotFoundImage from '../assets/not-found.jpg';
 import { Link } from 'react-router-dom';
-export const NotFoundPage = () => {
+import { useDynamicTitle } from '../hooks';
+export const NotFoundPage = ({ pageTitle }) => {
+  useDynamicTitle(pageTitle, 'Film Fiesta');
   return (
     <main>
       <section className="flex flex-col justify-center px-2 mt-3">

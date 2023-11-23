@@ -1,7 +1,12 @@
 import React from 'react';
+import { useDynamicTitle } from '../hooks';
 
 export const Movie = ({ movie }) => {
-  const imagePath = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+  const imagePath = movie.poster_path
+    ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+    : `https://placehold.co/382x573?text=No\n Image `;
+
+  useDynamicTitle(`Results for: ${movie.title} | Film Fiesta`, 'Film Fiesta');
   return (
     <main>
       <div className="flex justify-around flex-wrap py-5">
@@ -46,58 +51,58 @@ export const Movie = ({ movie }) => {
           <hr className="my-4" />
 
           {/* Copied From flowbite */}
-          <div class="relative overflow-x-auto">
+          <div className="relative overflow-x-auto">
             <h2 className="text-2xl">Details:</h2>
-            <table class="text-sm text-left rtl:text-right text-slate-800 dark:text-slate-50">
+            <table className="text-sm text-left rtl:text-right text-slate-800 dark:text-slate-50">
               <tbody>
-                <tr class="bg-white dark:bg-gray-800">
+                <tr className="bg-white dark:bg-gray-800">
                   <th
                     scope="row"
-                    class="py-4 font-medium text-slate-800 whitespace-nowrap dark:text-slate-50"
+                    className="py-4 font-medium text-slate-800 whitespace-nowrap dark:text-slate-50"
                   >
                     Runtime:
                   </th>
-                  <td class="py-4">{movie.runtime} mins.</td>
+                  <td className="py-4">{movie.runtime} mins.</td>
                 </tr>
 
-                <tr class="bg-white dark:bg-gray-800">
+                <tr className="bg-white dark:bg-gray-800">
                   <th
                     scope="row"
-                    class="py-4 font-medium text-slate-800 whitespace-nowrap dark:text-slate-50"
+                    className="py-4 font-medium text-slate-800 whitespace-nowrap dark:text-slate-50"
                   >
                     Budget:
                   </th>
-                  <td class="py-4">{movie.budget}</td>
+                  <td className="py-4">{movie.budget}</td>
                 </tr>
 
-                <tr class="bg-white dark:bg-gray-800">
+                <tr className="bg-white dark:bg-gray-800">
                   <th
                     scope="row"
-                    class="py-4 font-medium text-slate-800 whitespace-nowrap dark:text-slate-50"
+                    className="py-4 font-medium text-slate-800 whitespace-nowrap dark:text-slate-50"
                   >
                     Revenue:
                   </th>
-                  <td class="py-4">{movie.revenue}</td>
+                  <td className="py-4">{movie.revenue}</td>
                 </tr>
 
-                <tr class="bg-white dark:bg-gray-800">
+                <tr className="bg-white dark:bg-gray-800">
                   <th
                     scope="row"
-                    class="py-4 font-medium text-slate-800 whitespace-nowrap dark:text-slate-50"
+                    className="py-4 font-medium text-slate-800 whitespace-nowrap dark:text-slate-50"
                   >
                     Release Date:
                   </th>
-                  <td class="py-4">{movie.release_date}</td>
+                  <td className="py-4">{movie.release_date}</td>
                 </tr>
 
-                <tr class="bg-white dark:bg-gray-800">
+                <tr className="bg-white dark:bg-gray-800">
                   <th
                     scope="row"
-                    class="py-4 font-medium text-slate-800 whitespace-nowrap dark:text-slate-50"
+                    className="py-4 font-medium text-slate-800 whitespace-nowrap dark:text-slate-50"
                   >
                     IMDB Code:
                   </th>
-                  <td class="py-4 underline">
+                  <td className="py-4 underline">
                     <a
                       href={`https://imdb.com/title/${movie.imdb_id}`}
                       target="_blank"
