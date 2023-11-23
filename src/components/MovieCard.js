@@ -1,21 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const MovieCard = () => {
+export const MovieCard = ({ movie }) => {
+  const { id, original_title, overview, poster_path } = movie;
+  const image_path = `https://image.tmdb.org/t/p/w500/${poster_path}`;
   return (
     <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-2.5">
       <Link to="/">
-        <img className="rounded-t-lg" src="https://placehold.co/600x400" alt="" />
+        <img className="rounded-t-lg" src={image_path} alt="" />
       </Link>
       <div className="p-5">
         <Link to="/">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-slate-50 hover:text-primary-800 dark:hover:text-primary-800">
-            Noteworthy technology acquisitions 2021
+            {original_title}
           </h5>
         </Link>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-          Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse
-          chronological order.
+          {`${overview.substring(0, 150)}...`}
         </p>
         <Link
           to="/"
