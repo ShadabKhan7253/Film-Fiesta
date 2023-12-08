@@ -10,7 +10,6 @@ export const MoviesPage = ({ apiPath, pageTitle }) => {
   const { data, isLoading, setUrl } = useFetch();
   const API_KEY = process.env.REACT_APP_API_KEY;
   const BASE_URL = process.env.REACT_APP_BASE_URL;
-
   const totalPage = data && data.total_pages;
 
   const handleNextPage = () => {
@@ -26,6 +25,7 @@ export const MoviesPage = ({ apiPath, pageTitle }) => {
   useDynamicTitle(pageTitle, 'Film Fiesta');
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     const URL = `${BASE_URL}/3/movie${apiPath}?api_key=${API_KEY}&page=${pageNo}`;
     setUrl(URL);
     // eslint-disable-next-line react-hooks/exhaustive-deps
