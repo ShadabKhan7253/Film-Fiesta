@@ -272,7 +272,7 @@ export const Header = () => {
                         onClick={() => {
                           setIsMovieDropdownVisible(false);
                         }}
-                        to="/popular"
+                        to="/movies/popular"
                         className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
                         Popular
@@ -283,7 +283,7 @@ export const Header = () => {
                         onClick={() => {
                           setIsMovieDropdownVisible(false);
                         }}
-                        to="/top-rated"
+                        to="/movies/top-rated"
                         className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
                         Top Rated
@@ -294,7 +294,7 @@ export const Header = () => {
                         onClick={() => {
                           setIsMovieDropdownVisible(false);
                         }}
-                        to="/upcoming"
+                        to="/movies/upcoming"
                         className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
                         Upcoming
@@ -339,27 +339,47 @@ export const Header = () => {
                   >
                     <li>
                       <Link
-                        to="#"
+                        onClick={() => {
+                          setIsTvDropdownVisible(false);
+                        }}
+                        to="/tv/airing_today"
                         className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
-                        Dashboard
+                        Airing Today
                       </Link>
                     </li>
                     <li>
                       <Link
-                        to="#"
+                        onClick={() => {
+                          setIsTvDropdownVisible(false);
+                        }}
+                        to="/tv/popular"
                         className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
-                        Settings
+                        Popular
                       </Link>
                     </li>
                     <li>
-                      <NavLink
-                        to="/popular"
+                      <Link
+                        onClick={() => {
+                          setIsTvDropdownVisible(false);
+                        }}
+                        to="/tv/top_rated/"
                         className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
-                        Earnings
-                      </NavLink>
+                        Top Rated
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        onClick={() => {
+                          setIsTvDropdownVisible(false);
+                        }}
+                        to="/tv/on_the_air"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Upcoming
+                      </Link>
                     </li>
                   </ul>
                 </div>
