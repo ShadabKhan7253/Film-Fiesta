@@ -1,12 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Logo from '../assets/logo.png';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import useClickOutside from '../hooks/useClickOutside';
 
 export const Header = () => {
   const [show, setShow] = useState(false);
+  const movieRef = useRef();
+  const tvRef = useRef();
+  const [isMovieDropdownVisible, setIsMovieDropdownVisible] = useState(false);
+  const [isTvDropdownVisible, setIsTvDropdownVisible] = useState(false);
   const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem('darkMode')) || false);
 
   const navigate = useNavigate();
+
+  useClickOutside(movieRef, () => {
+    setIsMovieDropdownVisible(false);
+  });
+
+  useClickOutside(tvRef, () => {
+    setIsTvDropdownVisible(false);
+  });
 
   useEffect(() => {
     localStorage.setItem('darkMode', JSON.stringify(darkMode));
@@ -209,29 +222,147 @@ export const Header = () => {
                   Home
                 </NavLink>
               </li>
-              <li>
-                <NavLink
-                  to="/popular"
-                  className={({ isActive }) => (isActive ? activeMenuClasses : inactiveMenuClasses)}
+              <li ref={movieRef} className="relative ">
+                <button
+                  id="dropdownMovieLink"
+                  data-dropdown-toggle="dropdownNavbar"
+                  className="flex items-center justify-between w-full py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto dark:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                  onClick={() => setIsMovieDropdownVisible(!isMovieDropdownVisible)}
                 >
-                  Popular
-                </NavLink>
+                  Movies{' '}
+                  <svg
+                    className="w-2.5 h-2.5 ms-2.5"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <div
+                  id="dropdownNavbar"
+                  className={`z-10 ${
+                    !isMovieDropdownVisible ? 'hidden' : ''
+                  } absolute font-normal bg-white rounded-lg shadow w-36 dark:bg-gray-700`}
+                >
+                  <ul
+                    className="py-2 text-sm text-gray-700 dark:text-gray-400"
+                    aria-labelledby="dropdownLargeButton"
+                  >
+                    <li>
+                      <Link
+                        onClick={() => {
+                          setIsMovieDropdownVisible(false);
+                        }}
+                        to="/"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Now Playing
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        onClick={() => {
+                          setIsMovieDropdownVisible(false);
+                        }}
+                        to="/popular"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Popular
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        onClick={() => {
+                          setIsMovieDropdownVisible(false);
+                        }}
+                        to="/top-rated"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Top Rated
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        onClick={() => {
+                          setIsMovieDropdownVisible(false);
+                        }}
+                        to="/upcoming"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Upcoming
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </li>
-              <li>
-                <NavLink
-                  to="/top-rated"
-                  className={({ isActive }) => (isActive ? activeMenuClasses : inactiveMenuClasses)}
+              <li ref={tvRef} className="relative">
+                <button
+                  id="dropdownTvLink"
+                  data-dropdown-toggle="dropdownNavbar"
+                  className="flex items-center justify-between w-full py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto dark:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                  onClick={() => setIsTvDropdownVisible(!isTvDropdownVisible)}
                 >
-                  Top Rated
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/upcoming"
-                  className={({ isActive }) => (isActive ? activeMenuClasses : inactiveMenuClasses)}
+                  Tv's{' '}
+                  <svg
+                    className="w-2.5 h-2.5 ms-2.5"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <div
+                  id="dropdownNavbar"
+                  className={`z-10 ${
+                    !isTvDropdownVisible ? 'hidden' : ''
+                  } absolute font-normal bg-white rounded-lg shadow w-36 dark:bg-gray-700`}
                 >
-                  Upcoming
-                </NavLink>
+                  <ul
+                    className="py-2 text-sm text-gray-700 dark:text-gray-400"
+                    aria-labelledby="dropdownLargeButton"
+                  >
+                    <li>
+                      <Link
+                        to="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Dashboard
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Settings
+                      </Link>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/popular"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Earnings
+                      </NavLink>
+                    </li>
+                  </ul>
+                </div>
               </li>
             </ul>
           </div>

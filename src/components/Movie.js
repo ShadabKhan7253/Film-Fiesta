@@ -49,8 +49,6 @@ export const Movie = ({ movie }) => {
           </div>
 
           <hr className="my-4" />
-
-          {/* Copied From flowbite */}
           <div className="relative overflow-x-auto">
             <h2 className="text-2xl">Details:</h2>
             <table className="text-sm text-left rtl:text-right text-slate-800 dark:text-slate-50">
@@ -72,7 +70,7 @@ export const Movie = ({ movie }) => {
                   >
                     Budget:
                   </th>
-                  <td className="py-4">{movie.budget}</td>
+                  <td className="py-4">${movie.budget / 1000000} million</td>
                 </tr>
 
                 <tr className="bg-white dark:bg-gray-800">
@@ -82,7 +80,7 @@ export const Movie = ({ movie }) => {
                   >
                     Revenue:
                   </th>
-                  <td className="py-4">{movie.revenue}</td>
+                  <td className="py-4">${movie.revenue / 1000000} million</td>
                 </tr>
 
                 <tr className="bg-white dark:bg-gray-800">
