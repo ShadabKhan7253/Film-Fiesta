@@ -12,6 +12,8 @@ export const MoviesPage = ({ apiPath, pageTitle }) => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const totalPage = data && data.total_pages;
 
+  useDynamicTitle(pageTitle, 'Film Fiesta');
+
   const handleNextPage = () => {
     setPageNo(pageNo + 1);
   };
@@ -19,10 +21,6 @@ export const MoviesPage = ({ apiPath, pageTitle }) => {
   const handlePreviousPage = () => {
     setPageNo(pageNo - 1);
   };
-
-  // data && console.log(data.total_pages);
-
-  useDynamicTitle(pageTitle, 'Film Fiesta');
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
