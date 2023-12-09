@@ -8,11 +8,11 @@ export const TvCard = ({ tv }) => {
     : `https://placehold.co/382x573?text=No\nImage`;
   return (
     <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-2.5">
-      <Link to={`/tvs/${id}`}>
+      <Link to={`/tv/${id}`}>
         <img className="rounded-t-lg" src={image_path} alt="" />
       </Link>
       <div className="p-5">
-        <Link to={`/tvs/${id}`}>
+        <Link to={`/tv/${id}`}>
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-slate-50 hover:text-primary-800 dark:hover:text-primary-800">
             {original_name}
           </h5>
@@ -21,7 +21,7 @@ export const TvCard = ({ tv }) => {
           {`${overview.substring(0, 150)}...`}
         </p>
         <Link
-          to={`/tvs/${id}`}
+          to={`/tv/${id}`}
           className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary-800 rounded-lg hover:bg-primary-1000 focus:outline-none relative active:top-0.5"
         >
           Read more

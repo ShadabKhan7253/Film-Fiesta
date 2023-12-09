@@ -310,7 +310,7 @@ export const Header = () => {
                   className="flex items-center justify-between w-full py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto dark:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                   onClick={() => setIsTvDropdownVisible(!isTvDropdownVisible)}
                 >
-                  Tv's{' '}
+                  Tv Show{' '}
                   <svg
                     className="w-2.5 h-2.5 ms-2.5"
                     aria-hidden="true"

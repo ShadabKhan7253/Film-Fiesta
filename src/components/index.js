@@ -3,4 +3,5 @@ export { MovieCard } from './MovieCard';
 export { Footer } from './Footer';
 export { Skeleton } from './Skeleton';
 export { Movie } from './Movie';
+export { Tv } from './Tv';
 export { ScrollToTop } from './ScrollToTop';

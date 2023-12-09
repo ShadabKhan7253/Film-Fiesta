@@ -1,6 +1,13 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { MovieDetailsPage, MoviesPage, NotFoundPage, SearchPage, TvPage } from '../pages';
+import {
+  MovieDetailsPage,
+  MoviesPage,
+  NotFoundPage,
+  SearchPage,
+  TvDetailsPage,
+  TvPage,
+} from '../pages';
 
 export const AppRoutes = () => {
   return (
@@ -63,6 +70,7 @@ export const AppRoutes = () => {
             <TvPage apiPath="3/tv/top_rated" key="top-rated" pageTitle="Top Rated | Film Fiesta" />
           }
         />
+        <Route path="/tv/:id" element={<TvDetailsPage />} />
         <Route path="/movies/search" element={<SearchPage />} />
         <Route
           path="*"

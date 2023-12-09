@@ -26,7 +26,6 @@ export const TvPage = ({ apiPath, pageTitle }) => {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     const URL = `${BASE_URL}/${apiPath}?api_key=${API_KEY}&page=${pageNo}`;
-    console.log(URL);
     setUrl(URL);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [apiPath, pageNo]);
