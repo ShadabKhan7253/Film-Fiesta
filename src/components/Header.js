@@ -262,7 +262,7 @@ export const Header = () => {
                           setIsMovieDropdownVisible(false);
                         }}
                         to="/"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 hover:text-primary-800 hover:font-bold dark:hover:text-primary-800"
                       >
                         Now Playing
                       </Link>
@@ -273,7 +273,7 @@ export const Header = () => {
                           setIsMovieDropdownVisible(false);
                         }}
                         to="/movies/popular"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 hover:text-primary-800 hover:font-bold dark:hover:text-primary-800"
                       >
                         Popular
                       </Link>
@@ -284,7 +284,7 @@ export const Header = () => {
                           setIsMovieDropdownVisible(false);
                         }}
                         to="/movies/top-rated"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 hover:text-primary-800 hover:font-bold dark:hover:text-primary-800"
                       >
                         Top Rated
                       </Link>
@@ -295,7 +295,7 @@ export const Header = () => {
                           setIsMovieDropdownVisible(false);
                         }}
                         to="/movies/upcoming"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 hover:text-primary-800 hover:font-bold dark:hover:text-primary-800"
                       >
                         Upcoming
                       </Link>
@@ -343,7 +343,7 @@ export const Header = () => {
                           setIsTvDropdownVisible(false);
                         }}
                         to="/tv/airing_today"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 hover:text-primary-800 hover:font-bold dark:hover:text-primary-800"
                       >
                         Airing Today
                       </Link>
@@ -354,7 +354,7 @@ export const Header = () => {
                           setIsTvDropdownVisible(false);
                         }}
                         to="/tv/popular"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 hover:text-primary-800 hover:font-bold dark:hover:text-primary-800"
                       >
                         Popular
                       </Link>
@@ -365,7 +365,7 @@ export const Header = () => {
                           setIsTvDropdownVisible(false);
                         }}
                         to="/tv/top_rated/"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 hover:text-primary-800 hover:font-bold dark:hover:text-primary-800"
                       >
                         Top Rated
                       </Link>
@@ -376,7 +376,7 @@ export const Header = () => {
                           setIsTvDropdownVisible(false);
                         }}
                         to="/tv/on_the_air"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 hover:text-primary-800 hover:font-bold dark:hover:text-primary-800"
                       >
                         Upcoming
                       </Link>
