@@ -62,7 +62,7 @@ export const HomePage = () => {
         anywhere in-between. So many titles, so much to experience.
       </p>
       {/* Trending Movie */}
-      <div>
+      <div className="mb-5">
         <h3 className="flex items-center mt-5 text-3xl font-semibold text-primary-800 pl-5 sm:pl-0 ">
           Trending Movies
         </h3>
@@ -83,7 +83,7 @@ export const HomePage = () => {
         </div>
       </div>
       {/* Trending Tv */}
-      <div>
+      <div className="mb-5">
         <h3 className="flex items-center mt-5 text-3xl font-semibold text-primary-800 pl-5 sm:pl-0 ">
           Trending Tv Shows
         </h3>

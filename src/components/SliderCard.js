@@ -30,11 +30,11 @@ export const SliderCard = ({ id, poster_path, title, release_date }) => {
         70
       </span> */}
       <Link to={`/movies/${id}`}>
-        <p className="p-2 font-semibold text-gray-900  dark:text-slate-50 hover:text-primary-800 dark:hover:text-primary-800">
+        <p className="p-2 text-xl sm:text-base font-semibold text-gray-900  dark:text-slate-50 hover:text-primary-800 dark:hover:text-primary-800">
           {title}
         </p>
       </Link>
-      <p className="pl-2 text-sm text-slate-800 dark:text-white">{`${month} ${date}, ${year}`}</p>
+      <p className="pl-2 text-base sm:text-sm text-slate-800 dark:text-white">{`${month} ${date}, ${year}`}</p>
     </div>
   );
 };
