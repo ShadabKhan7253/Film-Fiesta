@@ -1,3 +1,4 @@
+export { HomePage } from './HomePage';
 export { MoviesPage } from './MoviesPage';
 export { TvPage } from './TvPage';
 export { MovieDetailsPage } from './MovieDetailsPage';

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import {
+  HomePage,
   MovieDetailsPage,
   MoviesPage,
   NotFoundPage,
@@ -16,7 +17,7 @@ export const AppRoutes = () => {
         <Route
           path="/"
           element={
-            <MoviesPage
+            <HomePage
               apiPath="/now_playing"
               key="now_playing"
               pageTitle="Now Playing | Film Fiesta"
@@ -25,11 +26,22 @@ export const AppRoutes = () => {
         />
         <Route path="/movies/:id" element={<MovieDetailsPage />} />
         <Route
+          path="/movies/now_playing"
+          element={
+            <MoviesPage
+              apiPath="/now_playing"
+              key="now_playing"
+              pageTitle="Now Playing | Film Fiesta"
+            />
+          }
+        />
+        <Route
           path="/movies/top-rated"
           element={
             <MoviesPage apiPath="/top_rated" key="top_rated" pageTitle="Top Rated | Film Fiesta" />
           }
         />
+
         <Route
           path="/movies/popular"
           element={

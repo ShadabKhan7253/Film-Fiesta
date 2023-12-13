@@ -12,6 +12,8 @@ export const MoviesPage = ({ apiPath, pageTitle }) => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const totalPage = data && data.total_pages;
 
+  console.log('Movie', data);
+
   useDynamicTitle(pageTitle, 'Film Fiesta');
 
   const handleNextPage = () => {

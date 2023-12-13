@@ -5,3 +5,4 @@ export { Skeleton } from './Skeleton';
 export { Movie } from './Movie';
 export { Tv } from './Tv';
 export { ScrollToTop } from './ScrollToTop';
+export { SliderCard } from './SliderCard';

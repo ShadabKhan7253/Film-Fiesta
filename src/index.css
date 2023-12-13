@@ -9,3 +9,13 @@ main {
   padding: 10px;
   padding-bottom: 60px;
 }
+
+.slick-next:before,
+.slick-prev:before {
+  color: #be9e44 !important;
+  font-size: 2rem !important;
+}
+
+.slick-dots li button:before {
+  color: #be9e44 !important;
+}
