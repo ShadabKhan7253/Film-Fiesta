@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDynamicTitle, useFetch } from '../hooks';
-import { Skeleton } from '../components';
+import { Skeleton, TvCard } from '../components';
 import { Pagination } from '../components/Pagination';
-import { TvCard } from '../components/TvCard';
 
 export const TvPage = ({ apiPath, pageTitle }) => {
   const [pageNo, setPageNo] = useState(1);
@@ -19,13 +18,11 @@ export const TvPage = ({ apiPath, pageTitle }) => {
     setPageNo(pageNo - 1);
   };
 
-  // data && console.log(data.total_pages);
-
   useDynamicTitle(pageTitle, 'Film Fiesta');
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-    const URL = `${BASE_URL}/${apiPath}?api_key=${API_KEY}&page=${pageNo}`;
+    const URL = `${BASE_URL}/3/tv${apiPath}?api_key=${API_KEY}&page=${pageNo}`;
     setUrl(URL);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [apiPath, pageNo]);

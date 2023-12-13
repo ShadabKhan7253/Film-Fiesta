@@ -5,6 +5,8 @@ import {
   MovieDetailsPage,
   MoviesPage,
   NotFoundPage,
+  PeopleDetailsPage,
+  PeoplePage,
   SearchPage,
   TvDetailsPage,
   TvPage,
@@ -58,7 +60,7 @@ export const AppRoutes = () => {
           path="/tv/airing_today"
           element={
             <TvPage
-              apiPath="3/tv/airing_today"
+              apiPath="/airing_today"
               key="airing_today"
               pageTitle="Airing Today | Film Fiesta"
             />
@@ -67,22 +69,25 @@ export const AppRoutes = () => {
         <Route
           path="/tv/on_the_air"
           element={
-            <TvPage apiPath="3/tv/on_the_air" key="on_the_air" pageTitle="Upcoming | Film Fiesta" />
+            <TvPage apiPath="/on_the_air" key="on_the_air" pageTitle="Upcoming | Film Fiesta" />
           }
         />
         <Route
           path="/tv/popular"
-          element={
-            <TvPage apiPath="3/tv/popular" key="popular" pageTitle="Popular | Film Fiesta" />
-          }
+          element={<TvPage apiPath="/popular" key="popular" pageTitle="Popular | Film Fiesta" />}
         />
         <Route
           path="/tv/top_rated"
           element={
-            <TvPage apiPath="3/tv/top_rated" key="top-rated" pageTitle="Top Rated | Film Fiesta" />
+            <TvPage apiPath="/top_rated" key="top-rated" pageTitle="Top Rated | Film Fiesta" />
           }
         />
         <Route path="/tv/:id" element={<TvDetailsPage />} />
+        <Route
+          path="/poeple/popular"
+          element={<PeoplePage apiPath="/popular" key="popular" pageTitle="People | Film Fiesta" />}
+        />
+        <Route path="/people/:id" element={<PeopleDetailsPage />} />
         <Route path="/movies/search" element={<SearchPage />} />
         <Route
           path="*"

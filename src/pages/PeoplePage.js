@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { MovieCard } from '../components/MovieCard';
 import { useDynamicTitle, useFetch } from '../hooks';
-import { Skeleton } from '../components';
+import { PeopleCard, Skeleton } from '../components';
 import { Pagination } from '../components/Pagination';
 
-export const MoviesPage = ({ apiPath, pageTitle }) => {
+export const PeoplePage = ({ apiPath, pageTitle }) => {
   // const URL = `https://api.themoviedb.org/3/movie${apiPath}?api_key=94220ccbdc06539966a08cc0383e233f`;
   const [pageNo, setPageNo] = useState(1);
   const { data, isLoading, setUrl } = useFetch();
@@ -24,7 +23,8 @@ export const MoviesPage = ({ apiPath, pageTitle }) => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-    const URL = `${BASE_URL}/3/movie${apiPath}?api_key=${API_KEY}&page=${pageNo}`;
+    const URL = `${BASE_URL}/3/person${apiPath}?api_key=${API_KEY}&page=${pageNo}`;
+    console.log(URL);
     setUrl(URL);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [apiPath, pageNo]);
@@ -43,7 +43,7 @@ export const MoviesPage = ({ apiPath, pageTitle }) => {
         {isLoading && renderSkeleton()}
         {data &&
           data.results &&
-          data.results.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
+          data.results.map((people) => <PeopleCard key={people.id} people={people} />)}
       </div>
 
       <Pagination

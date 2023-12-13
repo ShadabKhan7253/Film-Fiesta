@@ -23,6 +23,7 @@ export const SliderCard = ({ id, poster_path, title, release_date }) => {
   const date = data.getDate();
   const month = getMonth[data.getMonth()];
   const year = data.getFullYear();
+  const displayDateFormat = date ? `${month} ${date}, ${year}` : '';
   return (
     <div className="mr-4 ">
       <img className="rounded-md" src={image_path} alt={title} />
@@ -34,7 +35,9 @@ export const SliderCard = ({ id, poster_path, title, release_date }) => {
           {title}
         </p>
       </Link>
-      <p className="pl-2 text-base sm:text-sm text-slate-800 dark:text-white">{`${month} ${date}, ${year}`}</p>
+      <p className="pl-2 text-base sm:text-sm text-slate-800 dark:text-white">
+        {displayDateFormat}
+      </p>
     </div>
   );
 };

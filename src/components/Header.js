@@ -384,6 +384,15 @@ export const Header = () => {
                   </ul>
                 </div>
               </li>
+              <li>
+                <NavLink
+                  to="/poeple/popular"
+                  className={({ isActive }) => (isActive ? activeMenuClasses : inactiveMenuClasses)}
+                  aria-current="page"
+                >
+                  People
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>

@@ -3,5 +3,7 @@ export { MoviesPage } from './MoviesPage';
 export { TvPage } from './TvPage';
 export { MovieDetailsPage } from './MovieDetailsPage';
 export { TvDetailsPage } from './TvDetailsPage';
+export { PeoplePage } from './PeoplePage';
+export { PeopleDetailsPage } from './PeopleDetailsPage';
 export { NotFoundPage } from './NotFoundPage';
 export { SearchPage } from './SearchPage';

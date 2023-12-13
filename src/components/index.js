@@ -6,3 +6,5 @@ export { Movie } from './Movie';
 export { Tv } from './Tv';
 export { ScrollToTop } from './ScrollToTop';
 export { SliderCard } from './SliderCard';
+export { TvCard } from './TvCard';
+export { PeopleCard } from './PeopleCard';
