@@ -4,6 +4,7 @@ export { Footer } from './Footer';
 export { Skeleton } from './Skeleton';
 export { Movie } from './Movie';
 export { Tv } from './Tv';
+export { People } from './People';
 export { ScrollToTop } from './ScrollToTop';
 export { SliderCard } from './SliderCard';
 export { TvCard } from './TvCard';

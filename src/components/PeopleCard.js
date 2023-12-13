@@ -20,7 +20,9 @@ export const PeopleCard = ({ people }) => {
         <p className="mb-3 font-normal text-slate-800 dark:text-white">
           <span className="font-bold">Popular For:</span>{' '}
           {known_for.map((known) => (
-            <span className="">{known.title},</span>
+            <span key={known.id} className="">
+              {known.title},
+            </span>
           ))}
         </p>
         <Link
